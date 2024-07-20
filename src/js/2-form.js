@@ -1,9 +1,9 @@
 const form = document.querySelector('.feedback-form');
 
-//Використовуй ключ "feedback-form-state" для зберігання даних у сховищі.
+
 const STORAGE_KEY = "feedback-form-state";
 
-// Оголоси поза будь-якими функціями об’єкт formData з полями email та message, які спочатку мають порожні рядки як значення: { email: "", message: "" }.
+
 let formData = {
     email: "",
     message: ""
@@ -34,7 +34,6 @@ function handleFormInput(event) {
 function populateForm() {
   let savedFeedbackData = JSON.parse(localStorage.getItem(STORAGE_KEY));
   
-  // якщо в ЛС не існує таке значення, то виходимо з фукнції
   if (!savedFeedbackData) {
     return;
   }
@@ -45,10 +44,6 @@ function populateForm() {
   }
 }
 
-
-// При завантаженні сторінки перевір, чи є дані у локальному сховищі. Якщо так, використовуй їх для заповнення форми та об'єкта formData. Якщо ні, залиш поля форми порожніми.
-// Перед відправленням форми переконайся, що обидва поля форми заповнені. Якщо будь-яке з полів (властивостей об’єкта formData) порожнє, показуй сповіщення з текстом «Fill please all fields». 
-// Якщо всі поля заповнені, виведи у консоль об’єкт formData з актуальними значеннями, очисти локальне сховище, об’єкт formData і поля форми.
 
 
 function handleFormSubmit(event) {
